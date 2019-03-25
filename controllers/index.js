@@ -2,5 +2,6 @@
 
 module.exports = {
     AttractionsController: require('./attractions.controller'),
-    UsersController: require('./users.controller')
+    UsersController: require('./users.controller'),
+    PassController: require('./pass.controller')
 };
