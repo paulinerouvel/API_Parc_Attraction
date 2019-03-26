@@ -9,6 +9,14 @@ class passController{
 
     }
 
+    async getAllPass(){
+
+    }
+
+    async getPassById(){
+        
+    }
+
 
 }
 
