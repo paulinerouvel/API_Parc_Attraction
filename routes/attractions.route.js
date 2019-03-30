@@ -13,6 +13,7 @@ router.use(bodyParser.json());
 
 //add an attraction 
 router.post('/', async (req, res) => {
+    const id = -1;
     const name = req.body.name;
     const description = req.body.description;
     const type = req.body.type;
@@ -24,7 +25,7 @@ router.post('/', async (req, res) => {
     const images = req.body.images;
     const maintenance = req.body.maintenance;
 
-    const newAttraction = new Attraction(name, description, type, capacity, duration, openingHours, handicapAccess, withAdulteAccess, maintenance);
+    const newAttraction = new Attraction(id, name, description, type, capacity, duration, openingHours, handicapAccess, withAdulteAccess, maintenance);
 
     const isAdd = await AttractionController.addAttraction(newAttraction);
     if(!isAdd){
@@ -38,6 +39,7 @@ router.post('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
    const a = await AttractionController.getAttractionById(req.params.id);
    if(a) {
+       console.log(a);
        return res.json(a);
    }
    res.status(404).end();

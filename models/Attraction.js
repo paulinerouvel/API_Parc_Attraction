@@ -1,7 +1,8 @@
 'use strict'
 
 class Attraction{
-    constructor(name, description, type, capacity, duration, openingHours, handicapAccess, withAdulteAccess, maintenance, images){
+    constructor(id, name, description, type, capacity, duration, openingHours, handicapAccess, withAdulteAccess, maintenance, images){
+        this.id = id;
         this.name = name;
         this.description = description;
         this.type = type;

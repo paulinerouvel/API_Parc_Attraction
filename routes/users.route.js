@@ -1,14 +1,14 @@
-'use strict';
+// 'use strict';
 
-const models = require('../models');
-const User = models.User;
+// const models = require('../models');
+// const User = models.User;
 
-class ParticipantController {
+// class ParticipantController {
 
-    constructor(type, name, age) {
-        this.type = type || "notype";
-        this.name = name || "";
-        this.age = age || 0;
-    }
+//     constructor(type, name, age) {
+//         this.type = type || "notype";
+//         this.name = name || "";
+//         this.age = age || 0;
+//     }
 
-}
+// }

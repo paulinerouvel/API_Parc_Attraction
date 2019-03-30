@@ -23,18 +23,47 @@ class attractionsControllers{
 
         const rows = res[0];
         if(rows.length > 0) {
-            return new Attraction(rows[0].id, rows[0].name)
-
-            name, description, type, capacity, duration, openingHours, handicapAccess, withAdulteAccess, maintenance, images
+            return new Attraction(rows[0].id, rows[0].nom, rows[0].description, rows[0].type, rows[0].capacite, 
+                rows[0].duree, rows[0].horaire_ouverture, rows[0].acces_handicape, rows[0].acces_avec_adulte, rows[0].maintenance, rows[0].images);
         }
         return undefined;
     }
 
     //get attraction all
-    //get attraction by id
+    async getAllAttraction(){
+        const res = await database.connection.query('SELECT * FROM Attraction');
+        return results[0].map((row) => new Attraction(row.id, row.nom, row.description, row.type, row.capacite, 
+            row.duree, row.horaire_ouverture, row.acces_handicape, row.acces_avec_adulte, row.maintenance, row.images));
+    }
+
+
     //get attraction by pass
+    /* get pass by name (id)
+    select * from Billet_Attraction where Billet_id = pass.id;
+    return une map 
 
 
+
+
+    // async getAttractionByPass(pass){
+    //     const res = await database.connection.query('SELECT * FROM  WHERE id = ?', [id]);
+
+    //     const rows = res[0];
+    //     if(rows.length > 0) {
+    //         return new Attraction(rows[0].id, rows[0].nom, rows[0].description, rows[0].type, rows[0].capacite, 
+    //             rows[0].duree, rows[0].horaire_ouverture, rows[0].acces_handicape, rows[0].acces_avec_adulte, rows[0].maintenance, row[0].images);
+    //     }
+    //     return undefined;
+    // }
+
+
+    //update attraction
+
+    //get Frequentationby attre =>faire un count 
+    
+    //get renovation
+
+    //delete 
 
 }
 
