@@ -3,7 +3,7 @@
 module.exports = {
     Pass : require('./Pass'),
     Users : require('./Users'),
-    Attraction : require('./Attraction')
-
+    Attraction : require('./Attraction'),
+    database : require('./database')
 
 }

@@ -4,30 +4,41 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const AttractionController = require('../controllers').AttractionsController;
 
+const models = require('../models');
+const Attraction = models.Attraction;
+
 const router = express.Router();
 router.use(bodyParser.json());
 
 
 //add an attraction 
-//name, description, type, capacity, duration, openingHours, handicapAccess, withAdulteAccess, maintenance, images
 router.post('/', async (req, res) => {
-    const content = req.body.content;
-    const projectId = req.body.projectId;
+    const name = req.body.name;
+    const description = req.body.description;
+    const type = req.body.type;
+    const capacity = req.body.capacity;
+    const duration = req.body.duration;
+    const openingHours = req.body.openingHours;
+    const handicapAccess = req.body.handicapAccess;
+    const withAdulteAccess = req.body.withAdulteAccess;
+    const images = req.body.images;
+    const maintenance = req.body.maintenance;
 
-    const project = await ProjectController.getProject(projectId);
-    if(!project){
-        return res.status(400).end();
+    const newAttraction = new Attraction(name, description, type, capacity, duration, openingHours, handicapAccess, withAdulteAccess, maintenance);
+
+    const isAdd = await AttractionController.addAttraction(newAttraction);
+    if(!isAdd){
+        return res.status(408).end();
     }
-
-    const task = await TaskController.addTask(content, project);
-
-    res.json(task);
+    res.json(201).end();
 });
 
+
+//get by id 
 router.get('/:id', async (req, res) => {
-   const p = await ProjectController.getProject(req.params.id);
-   if(p) {
-       return res.json(p);
+   const a = await AttractionController.getAttractionById(req.params.id);
+   if(a) {
+       return res.json(a);
    }
    res.status(404).end();
 
