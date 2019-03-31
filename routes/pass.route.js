@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
     let id = -1;
     const type = req.body.type;
     const description = req.body.description;
-    const price = req.body.price;
+    const price = req.body.prix;
     
 
     const newPass = new Pass(id, type, description, price);

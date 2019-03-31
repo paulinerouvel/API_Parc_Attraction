@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="323beb38-06be-4be7-9ced-5d6b745a4785" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/attractions.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/attractions.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/parcs.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/parcs.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/pass.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/pass.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Attraction.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Attraction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Parc.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Parc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Pass.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Pass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/nodemon" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/nodemon" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/long/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/long/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/long/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/long/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/long/src/long.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/long/src/long.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/Changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/Changelog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/License" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/License" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/auth_41.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/auth_41.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/binlog_dump.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/binlog_dump.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/change_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/change_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/client_handshake.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/client_handshake.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/close_statement.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/close_statement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/command.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/command.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/execute.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/execute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/ping.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/ping.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/prepare.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/prepare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/query.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/query.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/quit.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/quit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/register_slave.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/register_slave.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/server_handshake.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/commands/server_handshake.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/compressed_protocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/compressed_protocol.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/connection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/connection_config.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/connection_config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/charset_encodings.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/charset_encodings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/charsets.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/charsets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/commands.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/commands.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/cursor.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/cursor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/encoding_charset.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/encoding_charset.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/errors.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/errors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/field_flags.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/field_flags.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/server_status.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/server_status.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/ssl_profiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/ssl_profiles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/constants/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packet_parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packet_parser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/auth_switch_request.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/auth_switch_request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/auth_switch_request_more_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/auth_switch_request_more_data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/auth_switch_response.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/auth_switch_response.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/binary_row.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/binary_row.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/binlog_dump.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/binlog_dump.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/binlog_query_statusvars.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/binlog_query_statusvars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/change_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/change_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/close_statement.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/close_statement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/column_definition.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/column_definition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/execute.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/execute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/handshake.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/handshake.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/handshake_response.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/handshake_response.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/packet.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/packet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/prepare_statement.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/prepare_statement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/prepared_statement_header.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/prepared_statement_header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/query.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/query.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/register_slave.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/register_slave.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/resultset_header.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/resultset_header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/ssl_request.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/ssl_request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/text_row.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/packets/text_row.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/parsers/binary_parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/parsers/binary_parser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/parsers/parser_cache.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/parsers/parser_cache.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/parsers/string.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/parsers/string.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/parsers/text_parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/parsers/text_parser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/pool.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/pool.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/pool_cluster.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/pool_cluster.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/pool_config.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/pool_config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/pool_connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/pool_connection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/results_stream.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/results_stream.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/lib/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/lib/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mysql2/promise.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql2/promise.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/named-placeholders/Changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/named-placeholders/Changelog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/named-placeholders/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/named-placeholders/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/named-placeholders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/named-placeholders/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/.jscsrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/.jshintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/bin/nodemon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/bin/postinstall.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/commitlint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/authors.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/config.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/help.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/logo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/options.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/topics.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/usage.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/whoami.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/cli/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/cli/parse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/config/command.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/config/defaults.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/config/exec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/config/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/config/load.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/help/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/monitor/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/monitor/match.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/monitor/run.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/monitor/signals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/monitor/watch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/nodemon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/rules/add.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/rules/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/rules/parse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/spawn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/utils/bus.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/utils/clone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/utils/colour.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/utils/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/utils/log.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/utils/merge.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/version.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/attractions.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/attractions.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/pass.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/pass.route.js" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/Pass.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/pass.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/pass.route.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/models/Parc.js" />
+        <option value="$PROJECT_DIR$/controllers/parcs.controller.js" />
+        <option value="$PROJECT_DIR$/models/Attraction.js" />
+        <option value="$PROJECT_DIR$/controllers/attractions.controller.js" />
+        <option value="$PROJECT_DIR$/routes/attractions.route.js" />
+        <option value="$PROJECT_DIR$/models/Pass.js" />
+        <option value="$PROJECT_DIR$/controllers/pass.controller.js" />
+        <option value="$PROJECT_DIR$/routes/pass.route.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="39" />
+    <option name="width" value="3200" />
+    <option name="height" value="1761" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="API_Parc_Attraction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="API_Parc_Attraction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="API_Parc_Attraction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="API_Parc_Attraction" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="API_Parc_Attraction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="API_Parc_Attraction" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="API_Parc_Attraction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="API_Parc_Attraction" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="323beb38-06be-4be7-9ced-5d6b745a4785" name="Default Changelist" comment="" />
+      <created>1554023679487</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554023679487</updated>
+      <workItem from="1554023684538" duration="7789000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="7789000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="39" width="3200" height="1761" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="npm" side_tool="true" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24976228" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" weight="0.5995935" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Parc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/parcs.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/attractions.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="996">
+          <caret line="68" column="27" lean-forward="true" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Attraction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/attractions.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Pass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/pass.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/pass.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

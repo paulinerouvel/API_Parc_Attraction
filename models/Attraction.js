@@ -1,24 +1,19 @@
 'use strict'
 
 class Attraction{
-    constructor(id, name, description, type, capacity, duration, openingHours, handicapAccess, withAdulteAccess, maintenance, images){
+    constructor(id, nom, description, type, capacite, duree, horaire_ouverture, acces_handicape, acces_avec_adulte, en_maintenance, Parc_id){
         this.id = id;
-        this.name = name;
+        this.nom = nom;
         this.description = description;
         this.type = type;
-        this.capacity = capacity;
-        this.duration = duration;
-        this.openingHours = openingHours;
-        this.handicapAccess = handicapAccess;
-        this.withAdulteAccess = withAdulteAccess;
-        this.maintenance = maintenance;
-        this.images = images;
+        this.capacite = capacite;
+        this.duree = duree;
+        this.horaire_ouverture = horaire_ouverture;
+        this.acces_handicape = acces_handicape;
+        this.acces_avec_adulte = acces_avec_adulte;
+        this.en_maintenance = en_maintenance;
+        this.Parc_id = Parc_id;
     }
-
-    //update information
-    //add images
-    //delete images
-
 
 }
 

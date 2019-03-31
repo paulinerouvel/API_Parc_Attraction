@@ -2,14 +2,13 @@
 
 class Pass{
     // a voir si on met l'utilisateur ici 
-    constructor(id, type, description, price){
+    constructor(id, type, description, prix){
         this.id = id;
         this.type = type;
         this.description = description;
-        this.price = price;
+        this.prix = prix;
     }
 
-    //update infos ? 
 
 }
 

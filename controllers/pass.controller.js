@@ -10,7 +10,7 @@ class passController{
     async addPass(newPass){
 
         const res = await database.connection.execute('INSERT INTO Billet (type, description, prix) VALUES (?, ?, ?)'
-        , [newPass.type, newPass.description, newPass.price]);
+        , [newPass.type, newPass.description, newPass.prix]);
 
     }
 
@@ -31,6 +31,7 @@ class passController{
     }
 
     //add attraction to pass
+    async addAttractonToPass()
 
     //update pass
 
