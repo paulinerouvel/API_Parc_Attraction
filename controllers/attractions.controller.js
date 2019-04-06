@@ -1,8 +1,8 @@
 'use strict'
 
 const models = require('../models');
-const database = models.database;
 const Pass = models.Pass;
+const database = models.database;
 const Attraction = models.Attraction;
 
 class attractionsControllers{
