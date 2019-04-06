@@ -44,7 +44,7 @@ class attractionsControllers{
 
     }
 
-    d, nom, description, type, capacite, duree, horaire_ouverture, acces_handicape, acces_avec_adulte, en_maintenance, Parc_id)
+
 
 
     async updateAttraction(attr){

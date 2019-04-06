@@ -14,10 +14,17 @@ class passController{
 
     }
 
+    async addAttractonToPass(idAttr, idPass, order){
+        const res = await database.connection.execute('INSERT INTO Billet_Attraction (Attraction_id, Billet_id, order) VALUES (?, ?, ?)', [idAttr, idPass, order]);
+        
+    }
+
     async getAllPass(){
         const res = await database.connection.query('SELECT * FROM Billet');
         return res[0].map((row) => new Pass(row.id, row.type, row.description, row.prix));
     }
+
+    
 
     async getPassById(id){
         const res = await database.connection.query('SELECT * FROM Billet WHERE id = ?', [id]);
@@ -30,15 +37,20 @@ class passController{
         
     }
 
-    //add attraction to pass
-    async addAttractonToPass()
+    async updatePass(newPass){
+        await database.connection.execute('UPDATE Billet SET type = \'?\', description = \'?\', prix = \'?\' WHERE id = ?',
+        [newPass.type, newPass.description, newPass.prix, newPass.id]);
+    }
 
-    //update pass
 
-    //delete pass
+    async deletePass(passId){
+        //delete aussi les billets Attraction 
+        await database.connection.execute('DELETE Billet  WHERE id = ?',
+        [passId]);
+    }
 
 
 }
 
-module.exports = new Pass();
+module.exports = new passController();
 
