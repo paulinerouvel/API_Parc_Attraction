@@ -5,9 +5,9 @@ const Users = models.Users;
 const database = models.database;
 
 class userController{
-    toString(){
-        return JSON.stringify(this);
-    }
+    // toString(){
+    //     return JSON.stringify(this);
+    // }
 
     async addUser(newUser){
         const res = await database.connection.execute('INSERT INTO Utilisateur (nom, prenom, date_naissance, tel, mail,' +
@@ -57,9 +57,6 @@ class userController{
             'dateAchat, dateDebut, dateFin) VALUES (?, ?, ?, ?, ?)'
             , [user.id, pass.id, Date.now(), Date.now(), pass.duree+Date.now()]);  // A traiter dans la route
         return new Pass();
-
-
-
 }
 
 module.exports = userController;

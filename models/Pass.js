@@ -9,7 +9,6 @@ class Pass{
         this.prix = prix;
     }
 
-
 }
 
 module.exports = Pass;
