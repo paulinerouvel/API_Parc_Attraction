@@ -13,6 +13,14 @@ class parcsControllers{
 
     }
 
+    async getParcById(id){
+
+    }
+
+    async getFrequentationParc(id){
+        
+    }
+
 
 }
 

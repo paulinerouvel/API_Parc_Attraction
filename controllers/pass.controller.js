@@ -7,6 +7,10 @@ const P = models.Attraction;
 
 class passController{
 
+    /***********************************************************************************/
+    /**                                     ADD FUNCTIONS                             **/
+    /***********************************************************************************/
+
     async addPass(newPass){
 
         const res = await database.connection.execute('INSERT INTO Billet (type, description, prix) VALUES (?, ?, ?)'
@@ -19,12 +23,14 @@ class passController{
         
     }
 
+    /***********************************************************************************/
+    /**                                     GET FUNCTIONS                             **/
+    /***********************************************************************************/
+
     async getAllPass(){
         const res = await database.connection.query('SELECT * FROM Billet');
         return res[0].map((row) => new Pass(row.id, row.type, row.description, row.prix));
     }
-
-    
 
     async getPassById(id){
         const res = await database.connection.query('SELECT * FROM Billet WHERE id = ?', [id]);
@@ -37,17 +43,27 @@ class passController{
         
     }
 
+    /***********************************************************************************/
+    /**                                  UPDATE FUNCTIONS                             **/
+    /***********************************************************************************/
     async updatePass(newPass){
         await database.connection.execute('UPDATE Billet SET type = \'?\', description = \'?\', prix = \'?\' WHERE id = ?',
         [newPass.type, newPass.description, newPass.prix, newPass.id]);
     }
 
+    /***********************************************************************************/
+    /**                                     DELETE FUNCTIONS                          **/
+    /***********************************************************************************/
+
 
     async deletePass(passId){
-        //delete aussi les billets Attraction 
+        await database.connection.execute('DELETE Billet_Attraction  WHERE Billet_id = ?',
+        [passId]);
         await database.connection.execute('DELETE Billet  WHERE id = ?',
         [passId]);
     }
+
+
 
 
 }

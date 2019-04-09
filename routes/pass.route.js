@@ -29,6 +29,16 @@ router.post('/', async (req, res) => {
 });
 
 
+//get all
+router.get('/', async (req, res) => {
+    const pass = await PassController.getAllPass();
+    if(pass){
+        return res.json(pass);
+    }
+    res.status(404).end();
+ 
+ });
+
 //get by id 
 router.get('/:id', async (req, res) => {
    const a = await PassController.getPassById(req.params.id);
