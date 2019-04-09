@@ -1,17 +1,17 @@
 'use strict';
 
 class User {
-    constructor(name, lastName, birthDate, phone, mail, address, postalCode, city, userType) {
+    constructor(nom, prenom, dateNaissance, numero, mail, adresse, codePostal, ville, typeUtilisateur) {
         this.id
-        this.name = name;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.phone = phone;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateNaissance = dateNaissance;
+        this.numero = numero;
         this.mail = mail;
-        this.address = address;
-        this.postalCode = postalCode;
-        this.city = city;
-        this.userType = userType;
+        this.adresse = adresse;
+        this.codePostal = codePostal;
+        this.ville = ville;
+        this.typeUtilisateur = typeUtilisateur;
     }
 
 }
