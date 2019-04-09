@@ -52,11 +52,12 @@ class userController{
         return true;
     }
 
-    async addBilletUtilisateur(user, type, description, prix){
+    async addBilletUtilisateur(user, type, description, prix) {
         const res = await database.connection.execute('INSERT INTO Billet_Utilisateur (Utilisateur_id, Billet_id, ' +
             'dateAchat, dateDebut, dateFin) VALUES (?, ?, ?, ?, ?)'
-            , [user.id, pass.id, Date.now(), Date.now(), pass.duree+Date.now()]);  // A traiter dans la route
+            , [user.id, pass.id, Date.now(), Date.now(), pass.duree + Date.now()]);  // A traiter dans la route
         return new Pass();
+    }
 }
 
 module.exports = userController;
