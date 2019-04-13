@@ -1,9 +1,11 @@
 'use strict'
 
 module.exports = {
-    Pass : require('./Pass'),
-    Users : require('./Users'),
+    Billet : require('./Billet'),
+    Users : require('./Utilisateur'),
     Attraction : require('./Attraction'),
+    Renovation : require('./Renovation'),
+    Parc : require('./Parc'),
     database : require('./database')
 
 }

@@ -1,8 +1,12 @@
 'use strict';
 
+
+
 class RouterBuilder {
 
     build(app) {
+
+
 
         // Add headers
         app.use(function (req, res, next) {
@@ -23,8 +27,11 @@ class RouterBuilder {
             // Pass to next layer of middleware
             next();
         });
-        app.use('/attraction', require('./attractions.route'));
-        //app.use('/user', require('./users.route'));
+        app.use('/attraction', require('./attraction.route'));
+        app.use('/utilisateur', require('./utilisateur.route'));
+        app.use('/billet', require('./billet.route'));
+        app.use('/parc', require('./parc.route'));
+        app.use('/renovation', require('./renovation.route'));
     }
 }
 

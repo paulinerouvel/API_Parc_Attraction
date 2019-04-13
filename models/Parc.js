@@ -18,4 +18,4 @@ class Parc{
 
 }
 
-module.exports = Pass;
+module.exports = Parc;
