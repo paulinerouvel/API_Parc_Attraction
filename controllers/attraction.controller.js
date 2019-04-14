@@ -104,6 +104,7 @@ class attractionController{
     async getFrequentationByAttraction(idAttraction){
         try{
             const res = await database.connection.query('SELECT COUNT(*) FROM acces_attraction WHERE Attraction_id = ?', [idAttraction]);
+
             return res[0];
         }
         catch{
@@ -128,6 +129,7 @@ class attractionController{
 
             const res = await database.connection.query('SELECT * FROM image');
             return res[0];
+            
         }
         catch{
             return undefined;

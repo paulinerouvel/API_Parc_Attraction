@@ -2,7 +2,7 @@
 
 class Utilisateur {
     constructor(id, nom, prenom, dateNaissance, numero, mail, adresse, codePostal, ville, typeUtilisateur, motDePasse) {
-        this.id
+        this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.date_naissance = dateNaissance;

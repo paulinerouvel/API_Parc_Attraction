@@ -5,5 +5,6 @@ module.exports = {
     UtilisateurController: require('./utilisateur.controller'),
     BilletController: require('./billet.controller'),
     ParcController: require('./parc.controller'),
-    RenovationController : require('./renovation.controller')
+    RenovationController : require('./renovation.controller'),
+    Billet_UtilisateurController : require('./billet_utilisateur.controller')
 };

@@ -1,6 +1,7 @@
 'use strict'
 const bcrypt = require('bcrypt');
 const jwtUtils = require('../utils/jwt.utils');
+const verifyToken = require('../utils/jwt.utils').verifyToken;
 const Utilisateur = require('../models/Utilisateur');
 const UtilisateurController = require('../controllers').UtilisateurController;
 
@@ -8,8 +9,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const router = express.Router();
-//router.use(bodyParser.urlencoded({ extended: true})); // parse des object inclus dans d'autre
 router.use(bodyParser.json());
+
+
+/***********************************************************************************/
+/**                                    POST FUNCTIONS                             **/
+/***********************************************************************************/
 
 //register
 router.post('/register', async (req, res) => {
@@ -91,7 +96,124 @@ router.post('/login', async (req, res) => {
     res.status(404);
 });
 
+//add acces parc 
+router.post('/accesParc', verifyToken, async (req, res) => {
+    if(req.body.idParc !== undefined && req.body.idUser !== undefined ){
+        const isAdd = await UtilisateurController.addAccesParc(req.body.idParc, req.body.idUser);
+        if(!isAdd){
+            return res.status(408).end();
+        }
+        return res.status(201).end();
+
+    }
+    return res.status(400).end();
+
+});
+
+//add acces attraction
+router.post('/accesAttraction', verifyToken, async (req, res) => {
+    if(req.body.idUser !== undefined && req.body.idAttraction !== undefined ){
+        const isAdd = await UtilisateurController.addAccesAttraction(req.body.idUser, req.body.idAttraction);
+        if(!isAdd){
+            return res.status(408).end();
+        }
+        return res.status(201).end();
+
+    }
+    return res.status(400).end();
+
+});
+
+/***********************************************************************************/
+/**                                     GET FUNCTIONS                             **/
+/***********************************************************************************/
 
 
-// Billet aura date début , date fin, plus id_billet (type du billet 1, 2, 3, 4)
+ 
+ router.get('/', verifyToken, async (req, res) => {
+
+    //get user by id
+    if(req.query.id)
+    {
+        const a = await UtilisateurController.getUserById(req.query.id);
+        if(a) {
+            return res.json(a);
+        }
+        return res.status(408).end();
+    }
+ 
+    //get user by mail
+    else if(req.body.mail !== undefined){
+         const a = await UtilisateurController.getUserByEmail(req.body.mail);
+         if(a) {
+             return res.json(a);
+         }
+         return res.status(408).end();
+     }
+
+     //get all users
+     else {
+         const users = await UtilisateurController.getAllUsers();
+         if(users){
+             return res.json(users);
+         }
+         return res.status(408).end();
+     }
+ 
+ });
+
+/***********************************************************************************/
+/**                                     PUT FUNCTIONS                             **/
+/***********************************************************************************/
+//update utilisateur
+router.put('/', verifyToken, async (req, res) => {
+    const id = req.body.id;
+    let nom = req.body.nom;
+    let prenom = req.body.prenom;
+    let date_naissance = req.body.date_de_naissance;
+    let tel = req.body.tel;
+    let mail = req.body.mail;
+    let adresse = req.body.adresse;
+    let cp = req.body.cp;
+    let ville = req.body.ville;
+    let type = req.body.type;
+    let mot_de_passe = req.body.mot_de_passe;
+
+
+    if(id !== undefined && nom !== undefined && prenom !== undefined && date_naissance !== undefined
+        &&  mail !== undefined && adresse !== undefined &&
+        cp !== undefined && ville !== undefined && type !== undefined && mot_de_passe !== undefined){
+
+        const newUser = new Utilisateur(id, nom, prenom, date_naissance, tel,
+            mail, adresse, cp, ville, type, mot_de_passe)
+
+        const isUp = await UtilisateurController.updateUser(newUser);
+        if(isUp){
+            return res.status(200).end();
+            
+        }
+
+        return res.status(408).end();
+    }
+
+    return res.status(400).end();
+});
+
+/***********************************************************************************/
+/**                                 DELETE FUNCTIONS                              **/
+/***********************************************************************************/
+
+
+//delete utilisateur
+router.delete('/:id', verifyToken, async (req, res) => {
+    if(req.params.id !== undefined){
+        let a = await UtilisateurController.deleteUser(req.params.id);
+        if(a){
+            return res.status(200).end();
+        }
+        return res.status(408).end();
+    }
+    res.status(400).end();
+});
+
 module.exports = router;

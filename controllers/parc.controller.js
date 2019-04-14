@@ -40,7 +40,7 @@ class parcController{
     }
 
     async getFrequentationByParcAndDate(idParc, from, to){
-        console.log("al")
+
         try{
             const res = await database.connection.query('SELECT COUNT(*) FROM acces_parc WHERE Parc_id = ? AND '+
             ' date >= DATE ? AND date <= DATE ?', [idParc, from, to]);

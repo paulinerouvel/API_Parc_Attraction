@@ -18,6 +18,8 @@ router.use(bodyParser.json());
 /**                                    POST FUNCTIONS                             **/
 /***********************************************************************************/
 
+
+//add a renovation
 router.post('/', verifyToken, async (req, res) => {
 
 
@@ -51,45 +53,45 @@ router.post('/', verifyToken, async (req, res) => {
 /**                                     GET FUNCTIONS                             **/
 /***********************************************************************************/
 
-//get renovation by id
-router.get('/:id', async (req, res, next) => {
-    if(req.params.id)
+
+ router.get('/', verifyToken, async (req, res) => {
+
+    //get renovation by id attraction
+    if(req.query.id)
     {
-        const a = await RenovationController.getRenovationByAttraction(req.params.id);
+        const a = await RenovationController.getRenovationByAttraction(req.query.id);
         if(a) {
             return res.json(a);
         }
         return res.status(408).end();
-    }    
-    next();
- });
- 
- //get renovation by date filter / by user / get all attraction
- router.get('/', async (req, res) => {
- 
-     if(req.query.idUtilisateur !== undefined){
+    }  
+    
+    //get renovation by id utilisateur
+    else if(req.query.idUtilisateur !== undefined){
          const a = await RenovationController.getRenovationByUtilisateur(req.query.idUtilisateur);
          if(a) {
              return res.json(a);
          }
-         res.status(404).end();
+         return res.status(408).end();
      }
+
+     //get renovation by id attraction and date filter
      else if(req.query.idAttraction !== undefined && req.query.from !== undefined && req.query.to !== undefined){
-         console.log('la')
+
         const a = await RenovationController.getRenovationsWithDateFilter(req.query.idAttraction, req.query.from, req.query.to);
         if(a) {
             return res.json(a);
         }
-        res.status(404).end();
+        return res.status(408).end();
      }
+     //get all renovation
      else {
          const rens = await RenovationController.getAllRenovations();
          if(rens){
              return res.json(rens);
          }
-         res.status(404).end();
-     }
- 
+         return res.status(408).end();
+    }
  });
 
 

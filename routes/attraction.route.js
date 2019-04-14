@@ -14,7 +14,7 @@ router.use(bodyParser.json());
 /***********************************************************************************/
 /**                                     POST REQUESTS                             **/
 /***********************************************************************************/
-//add an attraction 
+//Add an attraction 
 router.post('/', verifyToken, async (req, res) => {
 
     if(req.body.nom !== undefined && req.body.type !== undefined && req.body.description !== undefined && req.body.capacite !== undefined
@@ -46,7 +46,7 @@ router.post('/', verifyToken, async (req, res) => {
 
 });
 
-//addimage to attraction
+//Add an image to an attraction
 router.post('/image', verifyToken, async (req, res) => {
     if(req.body.idAttraction !== undefined && req.body.url !== undefined ){
         const isAdd = await AttractionController.addImage(req.body.idAttraction, req.body.url);
@@ -66,90 +66,99 @@ router.post('/image', verifyToken, async (req, res) => {
 /**                                     GET REQUESTS                             **/
 /***********************************************************************************/
 
-//get attraction by id
-router.get('/:id', async (req, res, next) => {
-   const a = await AttractionController.getAttractionById(req.params.id);
-   if(a) {
-       return res.json(a);
-   }
-   next();
-});
-
-//get attraction by name /by pass/  get all attraction
 router.get('/', async (req, res) => {
 
-    if(req.query.name !== undefined){
-        const a = await AttractionController.getAttractionByName(req.query.name);
+    //get attraction by id
+    if(req.query.id){
+        const a = await AttractionController.getAttractionById(req.query.id);
         if(a) {
             return res.json(a);
         }
-        res.status(404).end();
+        return res.status(408).end();
     }
+
+    //get attraction by name
+    else if(req.query.nom !== undefined){
+        const a = await AttractionController.getAttractionByName(req.query.nom);
+        if(a) {
+            return res.json(a);
+        }
+        return res.status(408).end();
+    }
+
+    //get Attraction by pass 
     else if(req.query.passId !== undefined){
         const a = await AttractionController.getAttractionByPass(req.query.passId);
         if(a) {
             return res.json(a);
         }
-        res.status(404).end();
+        return res.status(408).end();
     }
+    //get all attractions
     else {
         const attrs = await AttractionController.getAllAttractions();
         if(attrs){
             return res.json(attrs);
         }
-        res.status(404).end();
+        return res.status(408).end();
+        
     }
 
 });
 
-//get frequentation by id attraction 
-router.get('/frequentation/:id', async (req, res, next) => {
-    const a = await AttractionController.getFrequentationByAttraction(req.params.id);
-    if(a) {
-        return res.json(a);
-    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-    next();
 
-});
+router.get('/frequentation', verifyToken, async (req, res) => {
 
-//get frequentation by id attraction and date
-router.get('/frequentation', async (req, res) => {
-    if(req.query.idAttraction !== undefined && req.query.from !== undefined && req.query.to !== undefined){
+    //get frequentation by id attraction
+    if(req.query.id){
+        const a = await AttractionController.getFrequentationByAttraction(req.query.id);
+        if(a) {
+            return res.json(a);
+        }   
+        return res.status(408).end();
+    }
+
+    //get frequentation by id attraction and date filter
+    else if(req.query.idAttraction !== undefined && req.query.from !== undefined && req.query.to !== undefined){
         const a = await AttractionController.getFrequentationByAttractionAndDate(req.query.idAttraction, req.query.from, req.query.to);
         if(a) {
             return res.json(a);
         }
-        res.status(408).end();
+        return res.status(408).end();
     }
-    else {
-        res.status(404).end();
-    }
+
+    return res.status(400).end();
+               
 });
 
 
-router.get('/image/:id', async (req, res) => {
-    
-    if(req.params.id){
-        const a = await AttractionController.getImagesByAttraction(req.params.id);
+
+router.get('/image', async (req, res) => {
+
+    //get image by id attraction
+    if(req.query.id){
+        const a = await AttractionController.getImagesByAttraction(req.query.id);
         if(a) {
             return res.json(a);
         } 
+        return res.status(408).end();
     }
+    //get all images
     else{
         const a = await AttractionController.getAllImages();
         if(a) {
             return res.json(a);
         } 
+        return res.status(408).end();
     }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-    res.status(404).end();
+
 });
 
 /***********************************************************************************/
 /**                                     PUT REQUESTS                             **/
 /***********************************************************************************/
 
-//update attraction
+//update an attraction
 router.put('/', verifyToken, async (req, res) => {
     if(req.body.nom !== undefined && req.body.type !== undefined && req.body.description !== undefined && req.body.capacite !== undefined
         && req.body.duree !== undefined && req.body.horaire_ouverture !== undefined && req.body.acces_handicape !== undefined &&

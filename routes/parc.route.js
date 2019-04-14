@@ -20,40 +20,41 @@ router.use(bodyParser.json());
 /***********************************************************************************/
 
 //get parc by id
-router.get('/:id', async (req, res, next)=>{
-    if(req.params.id){
-        const parc = await ParcController.getParcById(req.params.id);
+router.get('/', async (req, res)=>{
+    if(req.query.id){
+        const parc = await ParcController.getParcById(req.query.id);
         if(parc){
             return res.json(parc);
         }
+        return res.status(408).end();
      }
-
-    next();
+     return res.status(400);
 });
 
 
-//get frequentation parc
-router.get('/frequentation/:id', async (req, res, next)=>{
-    if(req.params.id){
-        const parc = await ParcController.getFrequentationParc(req.params.id);
+
+
+router.get('/frequentation', verifyToken, async (req, res) => {
+
+    //get frequentation by id 
+    if(req.query.id){
+        const parc = await ParcController.getFrequentationParc(req.query.id);
         if(parc){
             return res.json(parc);
         }
+        return res.status(408).end();
     }
-    next();
-});
 
-//get frequentation by date filter and parc
-router.get('/frequentation', async (req, res) => {
-    if(req.query.idParc !== undefined && req.query.from !== undefined && req.query.to !== undefined){
+    //get frequentation by id and date filter
+    else if(req.query.idParc !== undefined && req.query.from !== undefined && req.query.to !== undefined){
 
         const a = await ParcController.getFrequentationByParcAndDate(req.query.idParc, req.query.from, req.query.to);
         if(a) {
             return res.json(a);
         }
-        res.status(408).end();
+        return res.status(408).end();
     }
-    res.status(404).end();
+    return res.status(400).end();
     
 });
 

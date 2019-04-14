@@ -6,6 +6,7 @@ module.exports = {
     Attraction : require('./Attraction'),
     Renovation : require('./Renovation'),
     Parc : require('./Parc'),
+    Billet_Utilisateur : require('./Billet_Utilisateur'),
     database : require('./database')
 
 }

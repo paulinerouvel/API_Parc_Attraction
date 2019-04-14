@@ -17,7 +17,7 @@ router.use(bodyParser.json());
 /**                                     POST REQUESTS                             **/
 /***********************************************************************************/
 
-//add a pass // add attraction to pass
+//add a pass 
 router.post('/', verifyToken, async (req, res) => {
     let id = -1;
     const type = req.body.type;
@@ -39,6 +39,8 @@ router.post('/', verifyToken, async (req, res) => {
 
         return res.status(201).end();
     }
+
+    // add attraction to pass
     else if(idAttraction !== undefined && idBillet !== undefined && ordre !== undefined){
         const isAdd = await BilletController.addAttractonToPass(idAttraction, idBillet, ordre);
         if(!isAdd){
@@ -57,7 +59,7 @@ router.post('/', verifyToken, async (req, res) => {
 /***********************************************************************************/
 
 
-//get by id 
+//get a pass by id 
 router.get('/:id', async (req, res) => {
 
     if(req.params.id !== undefined){
@@ -65,25 +67,26 @@ router.get('/:id', async (req, res) => {
         if(a) {
             return res.json(a);
         }
+        return res.status(408).end();
     }
 
-   res.status(404).end();
+   return res.status(400).end();
 
 });
 
-//get all
+//get all pass
 router.get('/', async (req, res) => {
     const pass = await BilletController.getAllPass();
     if(pass){
         return res.json(pass);
     }
-    res.status(404).end();
+    return res.status(408).end();
 });
 
 /***********************************************************************************/
 /**                                     PUT REQUESTS                              **/
 /***********************************************************************************/
-//update attraction
+//update billet
 router.put('/', verifyToken, async (req, res) => {
     let id = req.body.id;
     const type = req.body.type;
@@ -102,6 +105,8 @@ router.put('/', verifyToken, async (req, res) => {
 
         return res.status(408).end();
     }
+
+    return res.status(400).end();
 });
 
 /***********************************************************************************/
@@ -118,7 +123,7 @@ router.delete('/:id', verifyToken, async (req, res) => {
         }
         return res.status(408).end();
     }
-    res.status(400).end();
+    return res.status(400).end();
 });
 
 module.exports = router;

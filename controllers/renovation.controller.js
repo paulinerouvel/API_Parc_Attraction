@@ -4,7 +4,6 @@
 const models = require('../models');
 const database = models.database;
 const Renovation = models.Renovation;
-const verifyToken = require('../utils/jwt.utils').verifyToken;
 
 class renovationController{
 

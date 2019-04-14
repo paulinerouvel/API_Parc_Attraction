@@ -32,6 +32,7 @@ class RouterBuilder {
         app.use('/billet', require('./billet.route'));
         app.use('/parc', require('./parc.route'));
         app.use('/renovation', require('./renovation.route'));
+        app.use('/billet_utilisateur', require('./billet_utilisateur.route'));
     }
 }
 
