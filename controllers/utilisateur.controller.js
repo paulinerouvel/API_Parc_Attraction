@@ -13,7 +13,7 @@ class utilisateurController{
 
     async addUser(newUser){
         try{
-            const res = await database.connection.execute('INSERT INTO Utilisateur (nom, prenom, date_naissance, tel, mail,' +
+            const res = await database.connection.execute('INSERT INTO utilisateur (nom, prenom, date_naissance, tel, mail,' +
             ' adresse, cp, ville, type, mot_de_passe) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
             , [newUser.nom, newUser.prenom, newUser.date_naissance, newUser.tel, newUser.mail,
                 newUser.adresse, newUser.cp, newUser.ville, newUser.type, newUser.mot_de_passe]);
@@ -42,7 +42,7 @@ class utilisateurController{
             let date =  y.toString() + '-' + m.toString() + '-' + d.toString();
 
 
-            let res = await database.connection.execute('INSERT INTO Acces_Parc (Parc_id, Utilisateur_id, `date`) VALUES (?, ?, ?)',
+            let res = await database.connection.execute('INSERT INTO acces_parc (Parc_id, Utilisateur_id, `date`) VALUES (?, ?, ?)',
             [idParc, idUser, date]);
             return res;
         }
@@ -67,7 +67,7 @@ class utilisateurController{
             
             let date =  y.toString() + '-' + m.toString() + '-' + d.toString();
 
-            const res = await database.connection.execute('INSERT INTO Acces_Attraction (Attraction_id, Utilisateur_id,' +
+            const res = await database.connection.execute('INSERT INTO acces_attraction (Attraction_id, Utilisateur_id,' +
             ' date) VALUES (?, ?, ?)'
             , [idAttraction, idUser, date]);
             return res;
@@ -145,7 +145,7 @@ class utilisateurController{
     async updateUser(user){
 
         try{
-            const res = await database.connection.execute('UPDATE Utilisateur SET nom = ?, prenom = ?, date_naissance = ?, tel = ?, ' +
+            const res = await database.connection.execute('UPDATE utilisateur SET nom = ?, prenom = ?, date_naissance = ?, tel = ?, ' +
             'mail = ?, adresse = ?, cp = ?, ville = ?, type = ?, mot_de_passe = ? WHERE id = ?',
             [user.nom, user.prenom, user.date_naissance, user.tel, user.mail, user.adresse, user.cp,
                 user.ville, user.type, user.mot_de_passe, user.id]);
@@ -167,7 +167,7 @@ class utilisateurController{
 
     async deleteUser(id){
         try{
-            const res = await database.connection.execute('DELETE FROM Utilisateur WHERE id = ?', [id]);
+            const res = await database.connection.execute('DELETE FROM utilisateur WHERE id = ?', [id]);
             return res;
         }
         catch{

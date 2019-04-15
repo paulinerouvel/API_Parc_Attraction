@@ -60,7 +60,7 @@ class parcController{
 
     async updateParc(UpParc){
         try{
-            let res = await database.connection.execute('UPDATE Parc SET nom = ?, description = ?, adresse = ?, cp = ?, ville = ?, tel = ?, mail = ?, benefice = ?, est_ouvert = ?  WHERE id = ?',
+            let res = await database.connection.execute('UPDATE parc SET nom = ?, description = ?, adresse = ?, cp = ?, ville = ?, tel = ?, mail = ?, benefice = ?, est_ouvert = ?  WHERE id = ?',
             [UpParc.nom, UpParc.description, UpParc.adresse, UpParc.cp, UpParc.ville, UpParc.tel, UpParc.mail, UpParc.benefice, UpParc.est_ouvert, UpParc.id]);
             return res;
         }

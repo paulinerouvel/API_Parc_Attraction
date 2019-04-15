@@ -14,7 +14,7 @@ class billet_utilisateurController{
 
     async addBU(newBU){
         try{
-            const res = await database.connection.execute('INSERT INTO Billet_Utilisateur ( Utilisateur_id, Billet_id,' +
+            const res = await database.connection.execute('INSERT INTO billet_utilisateur ( Utilisateur_id, Billet_id,' +
             'dateAchat, dateDebut, dateFin) VALUES (?, ?, ?, ?, ?)'
             , [newBU.Utilisateur_id, newBU.Billet_id, newBU.dateAchat, newBU.dateDebut, newBU.dateFin]);
 

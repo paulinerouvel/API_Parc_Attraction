@@ -13,7 +13,7 @@ class billetController{
     async addPass(newPass){
 
         try{
-            const res = await database.connection.execute('INSERT INTO Billet (type, description, prix) VALUES (?, ?, ?)'
+            const res = await database.connection.execute('INSERT INTO billet (type, description, prix) VALUES (?, ?, ?)'
             , [newPass.type, newPass.description, newPass.prix]);
             return res;
         }
@@ -25,7 +25,7 @@ class billetController{
 
     async addAttractonToPass(idAttr, idPass, ordre){
         try{
-            const res = await database.connection.execute('INSERT INTO Billet_Attraction (Attraction_id, Billet_id, `order`) VALUES (?, ?, ?)', [idAttr, idPass, ordre]);
+            const res = await database.connection.execute('INSERT INTO billet_attraction (Attraction_id, Billet_id, `order`) VALUES (?, ?, ?)', [idAttr, idPass, ordre]);
             return res;
         }
         catch{
@@ -41,7 +41,7 @@ class billetController{
     async getAllPass(){
         try{
 
-            const res = await database.connection.query('SELECT * FROM Billet');
+            const res = await database.connection.query('SELECT * FROM billet');
             return res[0].map((row) => new Billet(row.id, row.type, row.description, row.prix));
         }
         catch{
@@ -52,7 +52,7 @@ class billetController{
 
     async getPassById(id){
         try{
-            const res = await database.connection.query('SELECT * FROM Billet WHERE id = ?', [id]);
+            const res = await database.connection.query('SELECT * FROM billet WHERE id = ?', [id]);
 
             const rows = res[0];
             if(rows.length > 0) {
@@ -71,7 +71,7 @@ class billetController{
     /***********************************************************************************/
     async updatePass(newPass){
         try{
-            let res = await database.connection.execute('UPDATE Billet SET type = ?, description = ?, prix = ? WHERE id = ?',
+            let res = await database.connection.execute('UPDATE billet SET type = ?, description = ?, prix = ? WHERE id = ?',
             [newPass.type, newPass.description, newPass.prix, newPass.id]);
             return res;
         }
@@ -88,9 +88,9 @@ class billetController{
 
     async deletePass(passId){
         try{
-            let res = await database.connection.execute('DELETE FROM Billet_Attraction WHERE billet_id = ?',
+            let res = await database.connection.execute('DELETE FROM billet_attraction WHERE billet_id = ?',
             [passId]);
-            await database.connection.execute('DELETE FROM Billet WHERE id = ?',
+            await database.connection.execute('DELETE FROM billet WHERE id = ?',
             [passId]);
             return res;
         }

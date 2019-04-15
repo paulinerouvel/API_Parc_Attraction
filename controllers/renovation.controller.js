@@ -14,7 +14,7 @@ class renovationController{
 
     async addRenovation(newRenov){
         try{
-            const res = await database.connection.execute('INSERT INTO Renovation (Attraction_id, Utilisateur_id,' +
+            const res = await database.connection.execute('INSERT INTO renovation (Attraction_id, Utilisateur_id,' +
             ' dateDebut, cout, dateFin, description) VALUES (?, ?, ?, ?, ?, ?)'
             , [newRenov.Attraction_id, newRenov.Utilisateur_id, newRenov.dateDebut, newRenov.cout, newRenov.dateFin, newRenov.description]);
 
