@@ -8,7 +8,7 @@ class RouterBuilder {
 
     build(app) {
 
-        app.use(cord());
+        app.use(cors());
 
         // Add headers
         app.use(function (req, res, next) {
