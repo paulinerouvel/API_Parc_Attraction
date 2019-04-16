@@ -1,12 +1,14 @@
 'use strict';
 
+const cors = require('cors');
+
 
 
 class RouterBuilder {
 
     build(app) {
 
-
+        app.use(cord());
 
         // Add headers
         app.use(function (req, res, next) {
