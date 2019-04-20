@@ -103,7 +103,7 @@ class attractionController{
 
     async getFrequentationByAttraction(idAttraction){
         try{
-            const res = await database.connection.query('SELECT COUNT(*) FROM acces_attraction WHERE Attraction_id = ?', [idAttraction]);
+            const res = await database.connection.query('SELECT COUNT(*) as nb FROM acces_attraction WHERE Attraction_id = ?', [idAttraction]);
 
             return res[0];
         }
@@ -112,9 +112,24 @@ class attractionController{
         }
     }
 
+    async getFrequentationByMonthAndYear(idAttraction){
+
+        try{
+            const res = await database.connection.query('SELECT COUNT(*) as nb, date FROM acces_attraction WHERE Attraction_id = ? GROUP BY YEAR(date), MONTH(date)', [idAttraction]);
+
+            const rows = res;
+            if(rows.length > 0) {
+                return rows[0];
+            }
+        }
+        catch{
+            return undefined;
+        }
+    }
+
     async getFrequentationByAttractionAndDate(idAttraction, from, to){
         try{
-            const res = await database.connection.query('SELECT COUNT(*) FROM acces_attraction WHERE Attraction_id = ? AND '+
+            const res = await database.connection.query('SELECT COUNT(*) as nb FROM acces_attraction WHERE Attraction_id = ? AND '+
             ' date >= DATE ? AND date <= DATE ?', [idAttraction, from, to]);
             return res[0];
         }

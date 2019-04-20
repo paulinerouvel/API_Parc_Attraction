@@ -20,7 +20,7 @@ class RouterBuilder {
             res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
             // Request headers you wish to allow
-            res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type,Access-Control-Allow-Origin');
+            res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,X-Requested-With,content-type, x-request-id');
 
             // Set to true if you need the website to include cookies in the requests sent
             // to the API (e.g. in case you use sessions)

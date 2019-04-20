@@ -15,8 +15,8 @@ class billet_utilisateurController{
     async addBU(newBU){
         try{
             const res = await database.connection.execute('INSERT INTO billet_utilisateur ( Utilisateur_id, Billet_id,' +
-            'dateAchat, dateDebut, dateFin) VALUES (?, ?, ?, ?, ?)'
-            , [newBU.Utilisateur_id, newBU.Billet_id, newBU.dateAchat, newBU.dateDebut, newBU.dateFin]);
+            'dateAchat, dateDebut, dateFin, nbEntreeDispo) VALUES (?, ?, ?, ?, ?, ?)'
+            , [newBU.Utilisateur_id, newBU.Billet_id, newBU.dateAchat, newBU.dateDebut, newBU.dateFin, newBU.nbEntreeDispo]);
 
             return res;
         }
@@ -37,7 +37,7 @@ class billet_utilisateurController{
             const rows = res[0];
             if(rows.length > 0) {
                 return rows.map((row) => new Billet_Utilisateur( row.Utilisateur_id, 
-                    row.Billet_id, row.dateAchat, row.dateDebut, row.dateFin));
+                    row.Billet_id, row.dateAchat, row.dateDebut, row.dateFin, row.nbEntreeDispo));
             }
         }
         catch{
@@ -52,7 +52,7 @@ class billet_utilisateurController{
         try{
             const res = await database.connection.query('SELECT * FROM billet_utilisateur');
             return res[0].map((row) => new Billet_Utilisateur(row.Utilisateur_id, 
-                row.Billet_id, row.dateAchat, row.dateDebut, row.dateFin));
+                row.Billet_id, row.dateAchat, row.dateDebut, row.dateFin, row.nbEntreeDispo));
         }
         catch{
             return undefined;
@@ -68,7 +68,7 @@ class billet_utilisateurController{
             const rows = res[0];
             if(rows.length > 0) {
                 return rows.map((row) => new Billet_Utilisateur( row.Utilisateur_id, 
-                    row.Billet_id, row.dateAchat, row.dateDebut, row.dateFin));
+                    row.Billet_id, row.dateAchat, row.dateDebut, row.dateFin, row.nbEntreeDispo));
             }
         }
         catch{
@@ -85,7 +85,7 @@ class billet_utilisateurController{
             const rows = res[0];
             if(rows.length > 0) {
                 return rows.map((row) => new Billet_Utilisateur( row.Utilisateur_id, 
-                    row.Billet_id, row.dateAchat, row.dateDebut, row.dateFin));
+                    row.Billet_id, row.dateAchat, row.dateDebut, row.dateFin, row.nbEntreeDispo));
             }
         }
         catch{

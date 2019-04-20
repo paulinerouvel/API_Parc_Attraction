@@ -27,9 +27,10 @@ class parcController{
     async getFrequentationParc(id){
         try{
             
-            const res = await database.connection.query('SELECT COUNT(*) FROM acces_parc WHERE Parc_id = ?', [id]);
+            const res = await database.connection.query('SELECT COUNT(*) as nb FROM acces_parc WHERE Parc_id = ?', [id]);
             const rows = res[0];
             if(rows.length > 0) {
+
                 return rows[0];
             }
         }
@@ -42,8 +43,40 @@ class parcController{
     async getFrequentationByParcAndDate(idParc, from, to){
 
         try{
-            const res = await database.connection.query('SELECT COUNT(*) FROM acces_parc WHERE Parc_id = ? AND '+
+            const res = await database.connection.query('SELECT COUNT(*) as nb FROM acces_parc WHERE Parc_id = ? AND '+
             ' date >= DATE ? AND date <= DATE ?', [idParc, from, to]);
+
+            const rows = res[0];
+            if(rows.length > 0) {
+                return rows[0];
+            }
+        }
+        catch{
+            return undefined;
+        }
+    }
+
+
+    async getFrequentationByMonthAndYear(idParc){
+
+        try{
+            const res = await database.connection.query('SELECT COUNT(*) as nb, date FROM acces_parc WHERE Parc_id = ? GROUP BY YEAR(date), MONTH(date)', [idParc]);
+
+            const rows = res;
+            if(rows.length > 0) {
+                return rows[0];
+            }
+        }
+        catch{
+            return undefined;
+        }
+    }
+    
+
+
+    async getFrequentationTempsReel(idParc){
+        try{
+            const res = await database.connection.query('SELECT ((SELECT COUNT(*) FROM acces_parc WHERE Parc_id = ?) - (SELECT COUNT(*) FROM sortie_parc WHERE Parc_id = ?)) AS nbTR', [idParc, idParc]);
 
             const rows = res[0];
             if(rows.length > 0) {

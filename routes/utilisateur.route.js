@@ -107,7 +107,19 @@ router.post('/accesParc', verifyToken, async (req, res) => {
 
     }
     return res.status(400).end();
+});
 
+//add sortie parc 
+router.post('/sortieParc', verifyToken, async (req, res) => {
+    if(req.body.idParc !== undefined && req.body.idUser !== undefined ){
+        const isAdd = await UtilisateurController.addSortieParc( req.body.idUser, req.body.idParc,);
+        if(!isAdd){
+            return res.status(408).end();
+        }
+        return res.status(201).end();
+
+    }
+    return res.status(400).end();
 });
 
 //add acces attraction

@@ -58,7 +58,29 @@ router.get('/frequentation', verifyToken, async (req, res) => {
     
 });
 
+//get frequentation temps reel
+router.get('/frequentationTR', verifyToken, async (req, res) => {
+    if(req.query.id){
+        const parc = await ParcController.getFrequentationTempsReel(req.query.id);
+        if(parc){
+            return res.json(parc);
+        }
+        return res.status(408).end();
+    }
+    return res.status(404).end();
+});
 
+//get frequentation by month and year
+router.get('/frequentationStats', verifyToken, async (req, res) => {
+    if(req.query.id){
+        const parc = await ParcController.getFrequentationByMonthAndYear(req.query.id);
+        if(parc){
+            return res.json(parc);
+        }
+        return res.status(408).end();
+    }
+    return res.status(404).end();
+});
 
 
 

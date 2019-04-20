@@ -1,13 +1,14 @@
 'use strict'
 
 class Billet_Utilisateur{
-    constructor(Utilisateur_id, Billet_id, dateAchat, dateDebut, dateFin){
+    constructor(Utilisateur_id, Billet_id, dateAchat, dateDebut, dateFin, nbEntreeDispo){
         
         this.Utilisateur_id = Utilisateur_id;
         this.Billet_id = Billet_id;
         this.dateAchat = dateAchat;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
+        this.nbEntreeDispo = nbEntreeDispo;
         
     }
 

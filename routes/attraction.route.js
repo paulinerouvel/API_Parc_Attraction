@@ -131,7 +131,18 @@ router.get('/frequentation', verifyToken, async (req, res) => {
                
 });
 
+router.get('/frequentationStats', verifyToken, async (req, res) => {
 
+    //get frequentation by month and year
+    if(req.query.id){
+        const a = await AttractionController.getFrequentationByMonthAndYear(req.query.id);
+        if(a) {
+            return res.json(a);
+        }   
+        return res.status(408).end();
+    }
+    return res.status(404).end();
+});
 
 router.get('/image', async (req, res) => {
 

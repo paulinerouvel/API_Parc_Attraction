@@ -26,13 +26,14 @@ router.post('/', verifyToken, async (req, res) => {
     const dateDebut = req.body.dateDebut;
     const dateFin = req.body.dateFin;
     const dateAchat = req.body.dateAchat;
+    const nbEntreeDispo = req.body.nbEntreeDispo;
 
 
 
     if(Billet_id !== undefined && Utilisateur_id !== undefined && dateDebut !== undefined &&
         dateFin !== undefined && dateAchat !== undefined  ){
     
-        const newBU = new Billet_Utilisateur(Utilisateur_id, Billet_id, dateAchat, dateDebut, dateFin);
+        const newBU = new Billet_Utilisateur(Utilisateur_id, Billet_id, dateAchat, dateDebut, dateFin, nbEntreeDispo);
 
         const isAdd = await Billet_UtilisateurController.addBU(newBU);
         if(!isAdd){

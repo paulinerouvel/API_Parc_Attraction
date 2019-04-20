@@ -78,6 +78,34 @@ class utilisateurController{
         
     }
 
+
+    async addSortieParc(idUser, idParc){
+        try{
+
+            let today = new Date();
+            let d;
+            let m;
+            let y;
+
+
+            parseInt(today.getDate()) < 10 ? d = "0" + today.getDate() : d = today.getDate();
+            parseInt(today.getUTCMonth() + 1) < 10 ? m = "0" + parseInt(today.getUTCMonth() +1) : m = parseInt(today.getUTCMonth() +1);
+            y = today.getFullYear();
+            
+            let date =  y.toString() + '-' + m.toString() + '-' + d.toString();
+
+            const res = await database.connection.execute('INSERT INTO sortie_parc (Parc_id, Utilisateur_id,' +
+            ' date) VALUES (?, ?, ?)'
+            , [idParc, idUser, date]);
+            return res;
+        }
+        catch{
+            return undefined;
+        }
+        
+    }
+
+
     // async addBilletUtilisateur(user, pass, dateDebut, dateFin) {
     //     const res = await database.connection.execute('INSERT INTO Billet_Utilisateur (Utilisateur_id, Billet_id, ' +
     //         'dateAchat, dateDebut, dateFin) VALUES (?, ?, ?, ?, ?)'
