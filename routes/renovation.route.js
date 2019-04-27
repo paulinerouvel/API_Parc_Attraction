@@ -63,7 +63,7 @@ router.post('/', verifyToken, async (req, res) => {
         if(a) {
             return res.json(a);
         }
-        return res.status(408).end();
+        return res.json({}).end();
     }  
     
     //get renovation by id utilisateur
@@ -72,7 +72,7 @@ router.post('/', verifyToken, async (req, res) => {
          if(a) {
              return res.json(a);
          }
-         return res.status(408).end();
+         return res.json({}).end();
      }
 
      //get renovation by id attraction and date filter
@@ -82,7 +82,7 @@ router.post('/', verifyToken, async (req, res) => {
         if(a) {
             return res.json(a);
         }
-        return res.status(408).end();
+        return res.json({}).end();
      }
      //get all renovation
      else {
@@ -90,7 +90,7 @@ router.post('/', verifyToken, async (req, res) => {
          if(rens){
              return res.json(rens);
          }
-         return res.status(408).end();
+         return res.json({}).end();
     }
  });
 

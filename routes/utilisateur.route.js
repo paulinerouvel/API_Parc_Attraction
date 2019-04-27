@@ -151,7 +151,7 @@ router.post('/accesAttraction', verifyToken, async (req, res) => {
         if(a) {
             return res.json(a);
         }
-        return res.status(408).end();
+        return res.json({}).end();
     }
  
     //get user by mail
@@ -160,7 +160,7 @@ router.post('/accesAttraction', verifyToken, async (req, res) => {
          if(a) {
              return res.json(a);
          }
-         return res.status(408).end();
+         return res.json({}).end();
      }
 
      //get all users
@@ -169,7 +169,7 @@ router.post('/accesAttraction', verifyToken, async (req, res) => {
          if(users){
              return res.json(users);
          }
-         return res.status(408).end();
+         return res.json({}).end();
      }
  
  });

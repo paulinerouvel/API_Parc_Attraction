@@ -60,7 +60,7 @@ router.post('/', verifyToken, async (req, res) => {
         if(a) {
             return res.json(a);
         }
-        return res.status(408).end();
+        return res.json({}).end();
     }  
 
     // get billet_utilisateur by id utilisateur and purchases dates 
@@ -69,7 +69,7 @@ router.post('/', verifyToken, async (req, res) => {
         if(a) {
             return res.json(a);
         }
-        res.status(408).end();
+        return res.json({}).end();
     }
 
     //get billet_utilisateur by id utilisateur and validity dates 
@@ -79,7 +79,7 @@ router.post('/', verifyToken, async (req, res) => {
         if(a) {
             return res.json(a);
         }
-        return res.status(408).end();
+        return res.json({}).end();
     }
 
     //get all billet_utilisateur 
@@ -88,7 +88,7 @@ router.post('/', verifyToken, async (req, res) => {
         if(bus){
             return res.json(bus);
         }
-        res.status(408).end();
+        return res.json({}).end();
     }
  
  });
