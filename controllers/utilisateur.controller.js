@@ -15,7 +15,7 @@ class utilisateurController{
         try{
             const res = await database.connection.execute('INSERT INTO utilisateur (nom, prenom, date_naissance, tel, mail,' +
             ' adresse, cp, ville, type, mot_de_passe) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
-            , [newUser.nom, newUser.prenom, newUser.date_naissance, newUser.tel, newUser.mail,
+            , [newUser.nom, newUser.prenom, newUser.date_de_naissance, newUser.tel, newUser.mail,
                 newUser.adresse, newUser.cp, newUser.ville, newUser.type, newUser.mot_de_passe]);
 
             return res;
@@ -126,7 +126,7 @@ class utilisateurController{
 
             const rows = res[0];
             if(rows.length > 0) {
-                return new Utilisateur(rows[0].id, rows[0].nom, rows[0].prenom, rows[0].date_naissance, rows[0].tel, rows[0].mail,
+                return new Utilisateur(rows[0].id, rows[0].nom, rows[0].prenom, rows[0].date_de_naissance, rows[0].tel, rows[0].mail,
                     rows[0].adresse, rows[0].cp, rows[0].ville, rows[0].type, rows[0].mot_de_passe);
             }
         }
@@ -144,7 +144,7 @@ class utilisateurController{
         
             const rows = res[0];
             if(rows.length > 0) {
-                return new Utilisateur(rows[0].id, rows[0].nom, rows[0].prenom, rows[0].date_naissance, rows[0].tel, rows[0].mail,
+                return new Utilisateur(rows[0].id, rows[0].nom, rows[0].prenom, rows[0].date_de_naissance, rows[0].tel, rows[0].mail,
                     rows[0].adresse, rows[0].cp, rows[0].ville, rows[0].type, rows[0].mot_de_passe);
             }
         }
@@ -157,7 +157,7 @@ class utilisateurController{
     async getAllUsers(){
         try{
             const res = await database.connection.query('SELECT * FROM utilisateur');
-            return res[0].map((row) => new Utilisateur(row.id, row.nom, row.prenom, row.date_naissance, row.tel,
+            return res[0].map((row) => new Utilisateur(row.id, row.nom, row.prenom, row.date_de_naissance, row.tel,
             row.mail, row.adresse, row.cp, row.ville, row.type, row.mot_de_passe));
         }
         catch{
@@ -175,7 +175,7 @@ class utilisateurController{
         try{
             const res = await database.connection.execute('UPDATE utilisateur SET nom = ?, prenom = ?, date_naissance = ?, tel = ?, ' +
             'mail = ?, adresse = ?, cp = ?, ville = ?, type = ?, mot_de_passe = ? WHERE id = ?',
-            [user.nom, user.prenom, user.date_naissance, user.tel, user.mail, user.adresse, user.cp,
+            [user.nom, user.prenom, user.date_de_naissance, user.tel, user.mail, user.adresse, user.cp,
                 user.ville, user.type, user.mot_de_passe, user.id]);
 
             return res;

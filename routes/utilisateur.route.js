@@ -21,7 +21,7 @@ router.post('/register', async (req, res) => {
     
     let nom = req.body.nom;
     let prenom = req.body.prenom;
-    let date_naissance = req.body.date_de_naissance;
+    let date_de_naissance = req.body.date_de_naissance;
     let tel = req.body.tel;
     let mail = req.body.mail;
     let adresse = req.body.adresse;
@@ -30,7 +30,7 @@ router.post('/register', async (req, res) => {
     let type = req.body.type;
     let mot_de_passe = req.body.mot_de_passe;
 
-    if(nom !== undefined && prenom !== undefined && date_naissance !== undefined
+    if(nom !== undefined && prenom !== undefined && date_de_naissance !== undefined
         &&  mail !== undefined && adresse !== undefined &&
         cp !== undefined && ville !== undefined && type !== undefined && mot_de_passe !== undefined){
 
@@ -43,7 +43,7 @@ router.post('/register', async (req, res) => {
             
             if(cryptedPass){
                 
-                let newUser = new Utilisateur(-1, nom, prenom, date_naissance, tel, mail, adresse, cp, ville, type, mot_de_passe);
+                let newUser = new Utilisateur(-1, nom, prenom, date_de_naissance, tel, mail, adresse, cp, ville, type, mot_de_passe);
                 const isAdd = await UtilisateurController.addUser(newUser);
                 if(isAdd){
                     return res.status(201).json({
@@ -196,7 +196,7 @@ router.put('/', verifyToken, async (req, res) => {
         &&  mail !== undefined && adresse !== undefined &&
         cp !== undefined && ville !== undefined && type !== undefined && mot_de_passe !== undefined){
 
-        const newUser = new Utilisateur(id, nom, prenom, date_naissance, tel,
+        const newUser = new Utilisateur(id, nom, prenom, date_de_naissance, tel,
             mail, adresse, cp, ville, type, mot_de_passe)
 
         const isUp = await UtilisateurController.updateUser(newUser);
