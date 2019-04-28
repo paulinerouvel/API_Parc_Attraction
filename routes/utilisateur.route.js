@@ -192,7 +192,7 @@ router.put('/', verifyToken, async (req, res) => {
     let mot_de_passe = req.body.mot_de_passe;
 
 
-    if(id !== undefined && nom !== undefined && prenom !== undefined && date_naissance !== undefined
+    if(id !== undefined && nom !== undefined && prenom !== undefined && date_de_naissance !== undefined
         &&  mail !== undefined && adresse !== undefined &&
         cp !== undefined && ville !== undefined && type !== undefined && mot_de_passe !== undefined){
 
