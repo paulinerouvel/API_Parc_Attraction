@@ -67,7 +67,7 @@ router.get('/:id', async (req, res) => {
         if(a) {
             return res.json(a);
         }
-        return res.json({}).end();
+        return res.status(204).end();
     }
 
    return res.status(400).end();
@@ -80,7 +80,7 @@ router.get('/', async (req, res) => {
     if(pass){
         return res.json(pass);
     }
-    return res.json({}).end();
+    return res.status(204).end();
 });
 
 /***********************************************************************************/

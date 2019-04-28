@@ -74,7 +74,7 @@ router.get('/', async (req, res) => {
         if(a) {
             return res.json(a);
         }
-        return res.json({}).end();
+        return res.status(204).end();
     }
 
     //get attraction by name
@@ -83,7 +83,7 @@ router.get('/', async (req, res) => {
         if(a) {
             return res.json(a);
         }
-        return res.json({}).end();
+        return res.status(204).end();
     }
 
     //get Attraction by pass 
@@ -92,7 +92,7 @@ router.get('/', async (req, res) => {
         if(a) {
             return res.json(a);
         }
-        return res.json({}).end();
+        return res.status(204).end();
     }
     //get all attractions
     else {
@@ -100,7 +100,7 @@ router.get('/', async (req, res) => {
         if(attrs){
             return res.json(attrs);
         }
-        return res.json({}).end();
+        return res.status(204).end();
         
     }
 
@@ -115,7 +115,7 @@ router.get('/frequentation', verifyToken, async (req, res) => {
         if(a) {
             return res.json(a);
         }   
-        return res.json({}).end();
+        return res.status(204).end();
     }
 
     //get frequentation by id attraction and date filter
@@ -124,7 +124,7 @@ router.get('/frequentation', verifyToken, async (req, res) => {
         if(a) {
             return res.json(a);
         }
-        return res.json({}).end();
+        return res.status(204).end();
     }
 
     return res.status(400).end();
@@ -139,7 +139,7 @@ router.get('/frequentationStats', verifyToken, async (req, res) => {
         if(a) {
             return res.json(a);
         }   
-        return res.json({}).end();;
+        return res.status(204).end();
     }
     return res.status(404).end();
 });
@@ -152,7 +152,7 @@ router.get('/image', async (req, res) => {
         if(a) {
             return res.json(a);
         } 
-        return res.json({}).end();
+        return res.status(204).end();
     }
     //get all images
     else{
@@ -160,7 +160,7 @@ router.get('/image', async (req, res) => {
         if(a) {
             return res.json(a);
         } 
-        return res.json({}).end();
+        return res.status(204).end();
     }
 
 });

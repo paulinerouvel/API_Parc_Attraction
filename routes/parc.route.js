@@ -26,7 +26,7 @@ router.get('/', async (req, res)=>{
         if(parc){
             return res.json(parc);
         }
-        return res.json({}).end();
+        return res.status(204).end();
      }
      return res.status(400);
 });
@@ -42,7 +42,7 @@ router.get('/frequentation', verifyToken, async (req, res) => {
         if(parc){
             return res.json(parc);
         }
-        return res.json({}).end();
+        return res.status(204).end();
     }
 
     //get frequentation by id and date filter
@@ -52,7 +52,7 @@ router.get('/frequentation', verifyToken, async (req, res) => {
         if(a) {
             return res.json(a);
         }
-        return res.json({}).end();
+        return res.status(204).end();
     }
     return res.status(400).end();
     
@@ -65,7 +65,7 @@ router.get('/frequentationTR', verifyToken, async (req, res) => {
         if(parc){
             return res.json(parc);
         }
-        return res.json({}).end();
+        return res.status(204).end();
     }
     return res.status(404).end();
 });
@@ -77,7 +77,7 @@ router.get('/frequentationStats', verifyToken, async (req, res) => {
         if(parc){
             return res.json(parc);
         }
-        return res.json({}).end();
+        return res.status(204).end();
     }
     return res.status(404).end();
 });
