@@ -5,7 +5,7 @@ class Utilisateur {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
-        this.date_naissance = dateNaissance;
+        this.date_de_naissance = dateNaissance;
         this.tel = numero;
         this.mail = mail;
         this.adresse = adresse;
