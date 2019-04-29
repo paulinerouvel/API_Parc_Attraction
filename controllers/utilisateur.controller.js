@@ -165,6 +165,36 @@ class utilisateurController{
         }
         
     }
+
+    async getAccesParcByUser(idUtilisateur){
+        try{
+            const res = await database.connection.query('SELECT * FROM acces_parc WHERE Utilisateur_id= ?', [idUtilisateur]);
+            return res[0];
+        }
+        catch{
+            return undefined;
+        }
+    }
+
+    async getSortieParcByUser(idUtilisateur){
+        try{
+            const res = await database.connection.query('SELECT * FROM sortie_parc WHERE Utilisateur_id= ?', [idUtilisateur]);
+            return res[0];
+        }
+        catch{
+            return undefined;
+        }
+    }
+
+    async getAccesAttractionByUserAndAttr(idUtilisateur, idAttraction){
+        try{
+            const res = await database.connection.query('SELECT * FROM acces_attraction WHERE Utilisateur_id = ? AND Attraction_id = ?', [idUtilisateur, idAttraction]);
+            return res[0];
+        }
+        catch{
+            return undefined;
+        }
+    }
     
 
     /***********************************************************************************/

@@ -174,6 +174,49 @@ router.post('/accesAttraction', verifyToken, async (req, res) => {
  
  });
 
+
+ //get acces parc 
+router.get('/accesParc', verifyToken, async (req, res) => {
+    if(req.query.idUtilisateur !== undefined){
+        const acces = await UtilisateurController.getAccesParcByUser(req.query.idUtilisateur);
+        if(acces){
+            return res.json(acces);
+        }
+        return res.status(204).end();
+
+    }
+    return res.status(400).end();
+});
+
+//get sortie parc 
+router.get('/sortieParc', verifyToken, async (req, res) => {
+    if(req.query.idUtilisateur !== undefined ){
+        const acces = await UtilisateurController.getSortieParcByUser(req.query.idUtilisateur);
+        if(acces){
+            return res.json(acces);
+        }
+        return res.status(204).end();
+
+    }
+    return res.status(400).end();
+});
+
+//get acces attraction
+router.get('/accesAttraction', verifyToken, async (req, res) => {
+    if(req.query.idUtilisateur !== undefined && req.query.idAttraction !== undefined ){
+        const acces = await UtilisateurController.getAccesAttractionByUserAndAttr(req.query.idUtilisateur, req.query.idAttraction);
+        if(acces){
+            return res.json(acces);
+        }
+        return res.status(204).end();
+
+    }
+    return res.status(400).end();
+});
+
+
+
+
 /***********************************************************************************/
 /**                                     PUT FUNCTIONS                             **/
 /***********************************************************************************/
