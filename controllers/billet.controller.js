@@ -13,8 +13,8 @@ class billetController{
     async addPass(newPass){
 
         try{
-            const res = await database.connection.execute('INSERT INTO billet (type, description, prix) VALUES (?, ?, ?)'
-            , [newPass.type, newPass.description, newPass.prix]);
+            const res = await database.connection.execute('INSERT INTO billet (type, description, prix, dureeValidite) VALUES (?, ?, ?)'
+            , [newPass.type, newPass.description, newPass.prix, newPass.dureeValidite]);
             return res;
         }
         catch{
@@ -42,7 +42,7 @@ class billetController{
         try{
 
             const res = await database.connection.query('SELECT * FROM billet');
-            return res[0].map((row) => new Billet(row.id, row.type, row.description, row.prix));
+            return res[0].map((row) => new Billet(row.id, row.type, row.description, row.prix, row.dureeValidite));
         }
         catch{
             return undefined;
@@ -56,7 +56,7 @@ class billetController{
 
             const rows = res[0];
             if(rows.length > 0) {
-                return new Billet(rows[0].id, rows[0].type, rows[0].description, rows[0].prix);
+                return new Billet(rows[0].id, rows[0].type, rows[0].description, rows[0].prix, rows[0].dureeValidite);
             }
         }
         catch{
@@ -71,8 +71,8 @@ class billetController{
     /***********************************************************************************/
     async updatePass(newPass){
         try{
-            let res = await database.connection.execute('UPDATE billet SET type = ?, description = ?, prix = ? WHERE id = ?',
-            [newPass.type, newPass.description, newPass.prix, newPass.id]);
+            let res = await database.connection.execute('UPDATE billet SET type = ?, description = ?, prix = ?, dureeValidite = ? WHERE id = ?',
+            [newPass.type, newPass.description, newPass.prix, newPass.dureeValidite ,newPass.id]);
             return res;
         }
         catch{

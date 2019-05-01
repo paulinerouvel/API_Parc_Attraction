@@ -23,12 +23,13 @@ router.post('/', verifyToken, async (req, res) => {
     const type = req.body.type;
     const description = req.body.description;
     const prix = req.body.prix;
+    const dureeValidite = req.body.dureeValidite;
 
     const idAttraction = req.body.idAttraction;
     const idBillet = req.body.idBillet;
     const ordre = req.body.ordre;
 
-    if(type !== undefined && description !== undefined && prix !== undefined){
+    if(type !== undefined && description !== undefined && prix !== undefined && dureeValidite !== undefined){
     
         const newPass = new Billet(id, type, description, prix);
 
@@ -92,8 +93,9 @@ router.put('/', verifyToken, async (req, res) => {
     const type = req.body.type;
     const description = req.body.description;
     const prix = req.body.prix;
+    const dureeValidite = req.body.dureeValidite;
 
-    if(id !== undefined && type !== undefined && description !== undefined && prix !== undefined){
+    if(id !== undefined && type !== undefined && description !== undefined && prix !== undefined && dureeValidite !== undefined){
     
         const newPass = new Billet(id, type, description, prix);
 
