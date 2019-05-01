@@ -93,8 +93,7 @@ class attractionController{
     async getAttractionByPass(passId) {
         try{
             const res = await database.connection.query('SELECT * FROM `attraction`, billet_attraction WHERE billet_attraction.Attraction_id = id AND billet_attraction.Billet_id = ?', [passId]);
-            return res[0].map((row) => new Attraction(row.id, row.nom, row.description, row.type, row.capacite,
-                row.duree, row.horaire_ouverture, row.acces_handicape, row.acces_avec_adulte, row.en_maintenance));
+            return res[0];
         }
         catch{
             return undefined;
