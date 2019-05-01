@@ -97,7 +97,7 @@ router.put('/', verifyToken, async (req, res) => {
 
     if(id !== undefined && type !== undefined && description !== undefined && prix !== undefined && dureeValidite !== undefined){
     
-        const newPass = new Billet(id, type, description, prix);
+        const newPass = new Billet(id, type, description, prix, dureeValidite);
 
         const isUp = await BilletController.updatePass(newPass);
         if(isUp){
