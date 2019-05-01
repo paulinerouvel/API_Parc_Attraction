@@ -12,8 +12,10 @@ class billetController{
 
     async addPass(newPass){
 
+        console.log(newPass)
+
         try{
-            const res = await database.connection.execute('INSERT INTO billet (type, description, prix, dureeValidite) VALUES (?, ?, ?)'
+            const res = await database.connection.execute('INSERT INTO billet (type, description, prix, dureeValidite) VALUES (?, ?, ?, ?)'
             , [newPass.type, newPass.description, newPass.prix, newPass.dureeValidite]);
             return res;
         }

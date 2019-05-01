@@ -31,6 +31,7 @@ router.post('/', verifyToken, async (req, res) => {
 
     if(type !== undefined && description !== undefined && prix !== undefined && dureeValidite !== undefined){
     
+        console.log("coucou")
         const newPass = new Billet(id, type, description, prix, dureeValidite);
 
         const isAdd = await BilletController.addPass(newPass);
