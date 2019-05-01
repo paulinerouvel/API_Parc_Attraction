@@ -100,6 +100,19 @@ class billetController{
     }
 
 
+    async deleteAttractionToPass(passId, attractionId){
+        try{
+            let res = await database.connection.execute('DELETE FROM billet_attraction WHERE billet_id = ? AND attraction_id = ?',
+            [passId, attractionId]);
+
+            return res;
+        }
+        catch{
+            return undefined;
+        }
+    }
+
+
 
 
 }

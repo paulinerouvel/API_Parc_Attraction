@@ -115,9 +115,18 @@ router.put('/', verifyToken, async (req, res) => {
 
 
 //delete pass
-router.delete('/:id', verifyToken, async (req, res) => {
-    if(req.params.id !== undefined){
-        let a = await BilletController.deletePass(req.params.id);
+router.delete('/', verifyToken, async (req, res) => {
+    if(req.query.id !== undefined){
+        
+        let a = await BilletController.deletePass(req.query.id);
+        if(a){
+            return res.status(200).end();
+        }
+        return res.status(408).end();
+    }
+    //delete attraction of
+    else if(req.query.idBillet !== undefined && req.query.idAttraction != undefined){
+        let a = await BilletController.deleteAttractionToPass(req.query.idBillet, req.query.idAttraction);
         if(a){
             return res.status(200).end();
         }
@@ -125,5 +134,7 @@ router.delete('/:id', verifyToken, async (req, res) => {
     }
     return res.status(400).end();
 });
+
+
 
 module.exports = router;
