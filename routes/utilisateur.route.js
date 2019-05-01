@@ -239,6 +239,10 @@ router.put('/', verifyToken, async (req, res) => {
         &&  mail !== undefined && adresse !== undefined &&
         cp !== undefined && ville !== undefined && type !== undefined && mot_de_passe !== undefined){
 
+        let cryptedPass = await bcrypt.hashSync(mot_de_passe, 5);
+
+        mot_de_passe = cryptedPass;
+
         const newUser = new Utilisateur(id, nom, prenom, date_de_naissance, tel,
             mail, adresse, cp, ville, type, mot_de_passe)
 
