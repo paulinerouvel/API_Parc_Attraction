@@ -118,8 +118,9 @@ class billet_utilisateurController{
     /***********************************************************************************/
     async updateBU(BU){
 
+
         try{
-            const res = await database.connection.execute('UPDATE Billet_Utilisateur SET Utilisateur_id = ?, Billet_id = ?,' +
+            const res = await database.connection.execute('UPDATE billet_utilisateur SET Utilisateur_id = ?, Billet_id = ?,' +
             ' dateAchat = ?,  dateDebut = ?,  dateFin = ?,  nbEntreeDispo = ? WHERE id = ?'
             , [BU.Utilisateur_id, BU.Billet_id, BU.dateAchat, BU.dateDebut, BU.dateFin, BU.nbEntreeDispo, BU.id]);
 
