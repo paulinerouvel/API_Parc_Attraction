@@ -18,7 +18,9 @@ class billet_utilisateurController{
             'dateAchat, dateDebut, dateFin, nbEntreeDispo) VALUES (?, ?, ?, ?, ?, ?)'
             , [newBU.Utilisateur_id, newBU.Billet_id, newBU.dateAchat, newBU.dateDebut, newBU.dateFin, newBU.nbEntreeDispo]);
 
+            console.log(res)
             return res;
+
         }
         catch{
             return undefined;
@@ -36,7 +38,7 @@ class billet_utilisateurController{
             const res = await database.connection.query('SELECT * FROM billet_utilisateur WHERE Utilisateur_id = ?', [idUser]);
             const rows = res[0];
             if(rows.length > 0) {
-                return rows.map((row) => new Billet_Utilisateur( row.Utilisateur_id, 
+                return rows.map((row) => new Billet_Utilisateur(row.id, row.Utilisateur_id, 
                     row.Billet_id, row.dateAchat, row.dateDebut, row.dateFin, row.nbEntreeDispo));
             }
         }
@@ -46,12 +48,27 @@ class billet_utilisateurController{
         
     }
 
+    async getBUById(idBillet){
+
+        try{
+            const res = await database.connection.query('SELECT * FROM billet_utilisateur WHERE id = ?', [idBillet]);
+            return res[0];
+
+        }
+        catch{
+            return undefined;
+        }
+        
+    }
+
+
+
 
     async getAllBUs(){
 
         try{
             const res = await database.connection.query('SELECT * FROM billet_utilisateur');
-            return res[0].map((row) => new Billet_Utilisateur(row.Utilisateur_id, 
+            return res[0].map((row) => new Billet_Utilisateur(row.id, row.Utilisateur_id, 
                 row.Billet_id, row.dateAchat, row.dateDebut, row.dateFin, row.nbEntreeDispo));
         }
         catch{
@@ -67,7 +84,7 @@ class billet_utilisateurController{
             const res = await database.connection.query('SELECT * FROM billet_utilisateur WHERE Utilisateur_id = ? AND dateDebut >= DATE ? AND dateFin <= ?', [idUtilisateur, from, to]);
             const rows = res[0];
             if(rows.length > 0) {
-                return rows.map((row) => new Billet_Utilisateur( row.Utilisateur_id, 
+                return rows.map((row) => new Billet_Utilisateur( row.id, row.Utilisateur_id, 
                     row.Billet_id, row.dateAchat, row.dateDebut, row.dateFin, row.nbEntreeDispo));
             }
         }
@@ -84,8 +101,8 @@ class billet_utilisateurController{
             const res = await database.connection.query('SELECT * FROM billet_utilisateur WHERE Utilisateur_id = ? AND dateAchat = DATE ?', [idUtilisateur, date]);
             const rows = res[0];
             if(rows.length > 0) {
-                return rows.map((row) => new Billet_Utilisateur( row.Utilisateur_id, 
-                    row.Billet_id, row.dateAchat, row.dateDebut, row.dateFin, row.nbEntreeDispo));
+                return rows.map((row) => new Billet_Utilisateur( row.id, row.Utilisateur_id, 
+                    row.Billet_id, row.dateAchat, row.dateDebut, row.dateFin, row.nbEntreeDispo ));
             }
         }
         catch{
@@ -99,21 +116,20 @@ class billet_utilisateurController{
     /***********************************************************************************/
     /**                                  UPDATE FUNCTIONS                             **/
     /***********************************************************************************/
+    async updateBU(BU){
 
-    //est ce que c'est utile ? 
-    // async updateBU(BU){
-    //     try{
-    //         const res = await database.connection.execute('INSERT INTO Billet_Utilisateur ( Utilisateur_id, Billet_id,' +
-    //         'dateAchat, dateDebut, dateFin) VALUES (?, ?, ?, ?, ?)'
-    //         , [BU.Utilisateur_id, BU.Billet_id, BU.dateAchat, BU.dateDebut, BU.dateFin]);
+        try{
+            const res = await database.connection.execute('UPDATE Billet_Utilisateur SET Utilisateur_id = ?, Billet_id = ?,' +
+            ' dateAchat = ?,  dateDebut = ?,  dateFin = ?,  nbEntreeDispo = ? WHERE id = ?'
+            , [BU.Utilisateur_id, BU.Billet_id, BU.dateAchat, BU.dateDebut, BU.dateFin, BU.nbEntreeDispo, BU.id]);
 
-    //         return res;
-    //     }
-    //     catch{
-    //         return undefined;
-    //     }
+            return res;
+        }
+        catch{
+            return undefined;
+        }
         
-    // }
+    }
 
     /***********************************************************************************/
     /**                                  DELETE FUNCTIONS                             **/
