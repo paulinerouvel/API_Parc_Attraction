@@ -33,13 +33,19 @@ class utilisateurController{
             let d;
             let m;
             let y;
+            let h;
+            let mi;
+            let s;
 
+            parseInt(today.getHours()) < 10 ? h = "0" + today.getHours() : h = today.getHours();
+            parseInt(today.getMinutes()) < 10 ? mi = "0" + today.getMinutes() : mi = today.getMinutes();
+            parseInt(today.getSeconds()) < 10 ? s = "0" + today.getSeconds() : s = today.getSeconds();
 
             parseInt(today.getDate()) < 10 ? d = "0" + today.getDate() : d = today.getDate();
             parseInt(today.getUTCMonth() + 1) < 10 ? m = "0" + parseInt(today.getUTCMonth() +1) : m = parseInt(today.getUTCMonth() +1);
             y = today.getFullYear();
             
-            let date =  y.toString() + '-' + m.toString() + '-' + d.toString();
+            let date =  y.toString() + '-' + m.toString() + '-' + d.toString() + " " + h.toString() + ":"+ mi.toString() + ":"+ s.toString();
 
 
             let res = await database.connection.execute('INSERT INTO acces_parc (Parc_id, Utilisateur_id, `date`) VALUES (?, ?, ?)',
@@ -59,13 +65,20 @@ class utilisateurController{
             let d;
             let m;
             let y;
+            let h;
+            let mi;
+            let s;
+
+            parseInt(today.getHours()) < 10 ? h = "0" + today.getHours() : h = today.getHours();
+            parseInt(today.getMinutes()) < 10 ? mi = "0" + today.getMinutes() : mi = today.getMinutes();
+            parseInt(today.getSeconds()) < 10 ? s = "0" + today.getSeconds() : s = today.getSeconds();
 
 
             parseInt(today.getDate()) < 10 ? d = "0" + today.getDate() : d = today.getDate();
             parseInt(today.getUTCMonth() + 1) < 10 ? m = "0" + parseInt(today.getUTCMonth() +1) : m = parseInt(today.getUTCMonth() +1);
             y = today.getFullYear();
             
-            let date =  y.toString() + '-' + m.toString() + '-' + d.toString();
+            let date =  y.toString() + '-' + m.toString() + '-' + d.toString() + " " + h.toString() + ":"+ mi.toString() + ":"+ s.toString();
 
             const res = await database.connection.execute('INSERT INTO acces_attraction (Attraction_id, Utilisateur_id,' +
             ' date) VALUES (?, ?, ?)'
@@ -86,13 +99,22 @@ class utilisateurController{
             let d;
             let m;
             let y;
+            let h;
+            let mi;
+            let s;
+
+            parseInt(today.getHours()) < 10 ? h = "0" + today.getHours() : h = today.getHours();
+            parseInt(today.getMinutes()) < 10 ? mi = "0" + today.getMinutes() : mi = today.getMinutes();
+            parseInt(today.getSeconds()) < 10 ? s = "0" + today.getSeconds() : s = today.getSeconds();
+
+
 
 
             parseInt(today.getDate()) < 10 ? d = "0" + today.getDate() : d = today.getDate();
             parseInt(today.getUTCMonth() + 1) < 10 ? m = "0" + parseInt(today.getUTCMonth() +1) : m = parseInt(today.getUTCMonth() +1);
             y = today.getFullYear();
             
-            let date =  y.toString() + '-' + m.toString() + '-' + d.toString();
+            let date =  y.toString() + '-' + m.toString() + '-' + d.toString() + " " + h.toString() + ":"+ mi.toString() + ":"+ s.toString();
 
             const res = await database.connection.execute('INSERT INTO sortie_parc (Parc_id, Utilisateur_id,' +
             ' date) VALUES (?, ?, ?)'
