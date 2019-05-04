@@ -26,7 +26,7 @@ class utilisateurController{
 
     }
 
-    async addAccesParc(idParc, idUser){
+    async addAccesParc(idParc, idUser, idBU){
 
         try{
             let today = new Date();
@@ -48,8 +48,8 @@ class utilisateurController{
             let date =  y.toString() + '-' + m.toString() + '-' + d.toString() + " " + h.toString() + ":"+ mi.toString() + ":"+ s.toString();
 
 
-            let res = await database.connection.execute('INSERT INTO acces_parc (Parc_id, Utilisateur_id, `date`) VALUES (?, ?, ?)',
-            [idParc, idUser, date]);
+            let res = await database.connection.execute('INSERT INTO acces_parc (Parc_id, Utilisateur_id, `date`, idBU) VALUES (?, ?, ?, ?)',
+            [idParc, idUser, date, idBU]);
             return res;
         }
         catch{

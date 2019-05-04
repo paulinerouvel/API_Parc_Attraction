@@ -98,8 +98,8 @@ router.post('/login', async (req, res) => {
 
 //add acces parc 
 router.post('/accesParc', verifyToken, async (req, res) => {
-    if(req.body.idParc !== undefined && req.body.idUser !== undefined ){
-        const isAdd = await UtilisateurController.addAccesParc(req.body.idParc, req.body.idUser);
+    if(req.body.idParc !== undefined && req.body.idUser !== undefined && req.body.idBU !== undefined){
+        const isAdd = await UtilisateurController.addAccesParc(req.body.idParc, req.body.idUser, req.body.idBU);
         if(!isAdd){
             return res.status(408).end();
         }
