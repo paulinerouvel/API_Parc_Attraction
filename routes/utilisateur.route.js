@@ -124,8 +124,8 @@ router.post('/sortieParc', verifyToken, async (req, res) => {
 
 //add acces attraction
 router.post('/accesAttraction', verifyToken, async (req, res) => {
-    if(req.body.idUser !== undefined && req.body.idAttraction !== undefined ){
-        const isAdd = await UtilisateurController.addAccesAttraction(req.body.idUser, req.body.idAttraction);
+    if(req.body.idUser !== undefined && req.body.idAttraction !== undefined && req.body.idBU!== undefined ){
+        const isAdd = await UtilisateurController.addAccesAttraction(req.body.idUser, req.body.idAttraction, idBU);
         if(!isAdd){
             return res.status(408).end();
         }

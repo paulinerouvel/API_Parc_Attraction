@@ -58,7 +58,7 @@ class utilisateurController{
         
     }
 
-    async addAccesAttraction(idUser, idAttraction){
+    async addAccesAttraction(idUser, idAttraction, idBU){
         try{
 
             let today = new Date();
@@ -81,8 +81,8 @@ class utilisateurController{
             let date =  y.toString() + '-' + m.toString() + '-' + d.toString() + " " + h.toString() + ":"+ mi.toString() + ":"+ s.toString();
 
             const res = await database.connection.execute('INSERT INTO acces_attraction (Attraction_id, Utilisateur_id,' +
-            ' date) VALUES (?, ?, ?)'
-            , [idAttraction, idUser, date]);
+            ' date, idBU) VALUES (?, ?, ?, ?)'
+            , [idAttraction, idUser, date, idBU]);
             return res;
         }
         catch{
